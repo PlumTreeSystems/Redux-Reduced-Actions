@@ -1,7 +1,5 @@
 # Reduced Actions
 
-> Reduced actions for Redux
-
 ## About
 
 Reduced actions are enchanced redux actions which carry information on how to change store's state. Instead of writing custom reducers for each action, reduced actions can return reduced state themselves. This is achieved by passing state object's new property value and location of that property using special path notation. It is realy useful when state object gets large and have a complicated structure or/and app have (too) many simple actions for which writing custom reducers might get repetitive.
