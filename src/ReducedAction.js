@@ -1,4 +1,4 @@
-
+'use strict'
 let StringPathHelpers = {
   hasIndex: (path) => {
       return path.indexOf('[') >= 0;
@@ -32,6 +32,10 @@ export default class ReducedAction {
   }
 
   static resolveValue(state, path, resolver){
+      if (typeof resolver != 'function'){
+          return resolver;
+      }
+
       let currentValue = ReducedAction.getValueAt(state, path);
       if (currentValue != null && currentValue.constructor === Array){
           return resolver([...currentValue]);
@@ -133,13 +137,7 @@ export default class ReducedAction {
   getMemento(state = {}){
       let type = this.type;
       let path = this.objectPath;
-      let value = {};
-      if (typeof this.value == 'function'){
-          value = ReducedAction.resolveValue(state, path, this.value);
-      }
-      else{
-          value = this.value;
-      }
+      let value = ReducedAction.resolveValue(state, path, this.value);
 
       return { type, path, value, reduced: true };
   }
@@ -149,7 +147,8 @@ export default class ReducedAction {
   }
 
   getReducedState (state){
-      return ReducedAction.replaceProp(state, this.objectPath, this.value);
+      let value = ReducedAction.resolveValue(state, this.objectPath, this.value);
+      return ReducedAction.replaceProp(state, this.objectPath, value);
   }
 
 }

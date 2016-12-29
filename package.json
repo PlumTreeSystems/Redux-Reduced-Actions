@@ -1,0 +1,36 @@
+{
+  "name": "reduced-actions-redux",
+  "version": "1.0.0",
+  "description": "Self-reducing actions for redux",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha",
+	 "build": "babel src --presets babel-preset-es2015 --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlumTreeSystems/Redux-Reduced-Actions.git"
+  },
+  "keywords": [
+    "redux",
+    "auto-reducer",
+    "reduced-actions",
+    "redux-middleware"
+  ],
+  "author": "Matas Valuzis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PlumTreeSystems/Redux-Reduced-Actions/issues"
+  },
+  "homepage": "https://github.com/PlumTreeSystems/Redux-Reduced-Actions#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
+    "deep-freeze": "0.0.1",
+    "mocha": "^3.2.0"
+  }
+}
