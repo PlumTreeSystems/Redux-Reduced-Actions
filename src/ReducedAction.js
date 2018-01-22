@@ -92,8 +92,8 @@ export default class ReducedAction {
       }
       // array index strategy
       else{
-          index = id;
-          if (typeof state[parseInt(index)] != 'undefined'){
+          index = parseInt(id);
+          if (typeof state[index] != 'undefined'){
             return [
               ...state.slice(0, index),
               ReducedAction.replaceArrayItem(state[index], tail, newValue),

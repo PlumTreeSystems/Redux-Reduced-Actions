@@ -126,8 +126,8 @@ var ReducedAction = function () {
             }
             // array index strategy
             else {
-                    index = id;
-                    if (typeof state[parseInt(index)] != 'undefined') {
+                    index = parseInt(id);
+                    if (typeof state[index] != 'undefined') {
                         return [].concat(_toConsumableArray(state.slice(0, index)), [ReducedAction.replaceArrayItem(state[index], tail, newValue)], _toConsumableArray(state.slice(index + 1)));
                     }
                     throw new Error('Item with index "' + id + '" does not exist.');
