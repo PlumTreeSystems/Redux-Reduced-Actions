@@ -21,7 +21,7 @@
     "redux-middleware"
   ],
   "author": "Matas Valuzis",
-  "license": "ISC",
+  "license": "GNU General Public License v3.0",
   "bugs": {
     "url": "https://github.com/PlumTreeSystems/Redux-Reduced-Actions/issues"
   },
